@@ -21,8 +21,9 @@ export class App extends Component {
     e.preventDefault();
 
     const { name, number, contacts } = this.state;
+    const lowerCaseName = name.toLowerCase();
 
-    if (contacts.some((contact) => contact.name === name)) {
+    if (contacts.some((contact) => contact.name.toLowerCase() === lowerCaseName)) {
       alert(`${name} is already in contacts.`);
       return;
     }
